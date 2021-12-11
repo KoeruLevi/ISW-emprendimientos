@@ -111,17 +111,16 @@
                             
                             <div class="dropdown" id="categoria">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="categoria" data-toggle="dropdown">
-                                    Categorias
+                                    Seleccione Categorias
                                 </button>
                                 
                                 <div class="dropdown-menu" id="categoria">
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox">Alimentos
+                                        <input type="checkbox"> Alimentos
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox">Servicios
+                                        <input type="checkbox"> Servicios
                                     </span>
-
                                 </div>
 
                             </div>
