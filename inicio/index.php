@@ -46,18 +46,22 @@
                                     <?php
                                     ///query para ver si hay publicaciones dependientes de disponibilidad:
                                     //$consulta="SELECT*FROM publicacion WHERE disponibilidad ='true'";
-                                    $consulta="SELECT*FROM publicacion";//query de prueba
+                                    $consulta = "SELECT*FROM vista_inicio"; //query de prueba
                                     $resultado = mysqli_query($conexion, $consulta);
 
                                     while ($mostrar = mysqli_fetch_array($resultado)) { ?>
                                         <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                             <div class="mx-auto">
-                                                <h2 class="font-weight-bold"><?php echo $mostrar['titulo'] ?></h2>
-                                                <img src="<?php print $mostrar['id_imagen']; ?>" style="width:100%">
-                                                <h5 class="text-muted"><?php echo $mostrar['info_post'] ?></h5>
-                                                <h5 class="text-muted">Id: <?php echo $mostrar['id_post'] ?></h5>
-                                                <h5 class="text-primary"><i class="fas fa-dollar-sign"></i><?php echo $mostrar['precio_post'] ?></h5>
-                                                <h6 class="text-warning"><i class="fas fa-phone-square-alt"></i></span><?php echo $mostrar['contacto'] ?></h6>
+
+                                                <img src="<?php print $mostrar['ruta_imagen_vipost']; ?>" style="width:100%">
+                                                <h2 class="font-weight-bold"><?php echo $mostrar['titulo_vipost'] ?></h2>
+                                                <h5 class="text-info"><?php echo $mostrar['info_vipost'] ?></h5>
+
+                                                <form action="../partes/publicacion.php" method="post" enctype="multipart/form-data">
+                                                    <input type="hidden" id="id_post_selec" name="id_post_selec" value="<?php echo $mostrar['id_vipost'] ?>">
+                                                    <button type="submit" class="btn btn-warning">Ver mas</button>
+                                                </form>
+
                                             </div>
                                         </div>
                                     <?php
@@ -104,30 +108,47 @@
                                         reader.readAsDataURL(event.target.files[0]);
                                     };
                                 </script>
-                            </div>
-                        </div>
-                        <br><br>
-                        <div class="row">
-                            <div class="form-group col-3">
-                                <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
-                            </div>
-                        </div>
+                            
+                            <div class="dropdown" id="categoria">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="categoria" data-toggle="dropdown">
+                                    Categorias
+                                </button>
+                                
+                                <div class="dropdown-menu" id="categoria">
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox">Alimentos
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox">Servicios
+                                    </span>
 
-                        <div class="row">
-                            <div class="form-group col-3">
-                                <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
-                            </div>
-                        </div>
+                                </div>
 
-                        <div class="row">
-                            <div class="form-group col-3">
-                                <input type="text" id="contacto" class="form-control" name="contacto" placeholder="Contacto" required>
                             </div>
-                        </div>
-                        <br><br>
-                        <div class="offset-10">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </div>
+                            <br><br>
+
+
+                            <div class="row">
+                                <div class="form-group col-3">
+                                    <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-3">
+                                    <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-3">
+                                    <input type="text" id="contacto" class="form-control" name="contacto" placeholder="Contacto" required>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="offset-10">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -136,7 +157,7 @@
 
 
     <!-- Modificar publicación Modal -->
-<div class="modal fade" id="modificarPublicacion" tabindex="-1">
+    <div class="modal fade" id="modificarPublicacion" tabindex="-1">
         <div class="modal-dialog modal-lg" style="max-width: 25%;">
             <div class="modal-content">
                 <div class="modal-header">
@@ -150,14 +171,14 @@
 
                         <div class="row">
                             <div class="form-group col-3">
-                                <input type="text" id="titulo" class="form-control" name="titulo" placeholder="Título"  required>
+                                <input type="text" id="titulo" class="form-control" name="titulo" placeholder="Título" required>
                             </div>
                         </div>
 
                         <div class="row">
-                                    <div class="form-group col-3">
-                                    <input type="text" id="id_post" class="form-control" name="id_post" placeholder="ID" required>
-                                    </div>
+                            <div class="form-group col-3">
+                                <input type="text" id="id_post" class="form-control" name="id_post" placeholder="ID" required>
+                            </div>
                         </div>
 
                         <div class="row">
@@ -176,7 +197,7 @@
                                         reader.readAsDataURL(event.target.files[0]);
                                     };
                                 </script>
-                              
+
                                 <div class="row">
                                     <div class="form-group col-3">
                                         <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
