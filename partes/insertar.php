@@ -4,6 +4,7 @@ session_start();
 date_default_timezone_set('America/Santiago');
 # definimos la carpeta destino
 $carpetaDestino = "../assets/imagenes/";
+date_default_timezone_set('America/Santiago');
 
 # si hay algun archivo que subir
 if (isset($_FILES["archivo"]) && $_FILES["archivo"]["name"]) {
@@ -49,7 +50,6 @@ if (!empty($_POST)) {
     $id_pub_res =  mysqli_fetch_array($resultado_id_post);
 
     $queryImagen = "INSERT INTO imagenes (Id_user, Id_post, Ruta_imagen) VALUES('$id_usuario', '$id_pub_res', '$destino')";
-
     if (mysqli_query($conexion, $queryPublicacion) && mysqli_query($conexion, $queryImagen)) {
         $output .= '<label class="text-success">Registro Insertado Correctamente</label>';
         header('Location: ../inicio/index.php');

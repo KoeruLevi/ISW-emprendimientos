@@ -66,6 +66,10 @@ a:hover {
     width: 250px;
 }
 
+#titulo{
+    width: 250px;
+}
+
 #info_post{
     width: 250px;
 	height: 100px;
@@ -80,13 +84,14 @@ a:hover {
     width: 250px;
 }
 
+
 #categoria{
     width: 200px;
     margin-left: 0px;
 }
 
 
-  
+
 @media (max-width: 768px) {
     #sidebar-container {
       display: none;
