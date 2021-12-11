@@ -5,7 +5,7 @@
     session_start();
     $_SESSION['email']=$email;
 
-    $conexion = mysqli_connect("localhost", "root", "", "bd_emprendimiento");
+    $conexion = mysqli_connect("localhost", "root", "", "bd_emprendimiento_ef");
     //query a la BD
     $consulta="SELECT*FROM usuario WHERE email_user='$email' AND password_user='$pass'";
     $resultado=mysqli_query($conexion,$consulta);
