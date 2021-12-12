@@ -34,7 +34,7 @@ if (isset($_FILES["archivo"]) && $_FILES["archivo"]["name"]) {
 
 if (!empty($_POST)) {
     $output = '';
-    $id_usuario = "SELECT * FROM usuario (Id_user)";
+    $id_usuario = $_SESSION['id_usuario'];
     $titulo = mysqli_real_escape_string($conexion, $_POST["titulo"]);
     $info_post = mysqli_real_escape_string($conexion, $_POST["info_post"]);
     $fecha_hora = date('Y-m-d h:i:s a', time());
