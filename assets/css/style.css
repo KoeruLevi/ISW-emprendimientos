@@ -66,6 +66,10 @@ a:hover {
     width: 250px;
 }
 
+#titulo{
+    width: 250px;
+}
+
 #info_post{
     width: 250px;
 	height: 100px;
@@ -77,6 +81,15 @@ a:hover {
 
 #contacto{
     width: 250px;
+}
+
+#categoria{
+    width: 250px;
+    margin-left: 7px;
+}
+.dropdown-menu {
+    max-height: 280px;
+    overflow-y: auto;
 }
   
 @media (max-width: 768px) {
