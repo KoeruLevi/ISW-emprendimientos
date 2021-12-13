@@ -43,6 +43,7 @@ if (!empty($_POST)) {
 
     if ($disponibilidad == 1) {
         $disponibilidad = 'Disponible';
+        
     }else {
         $disponibilidad = 'No disponible';
     }
@@ -65,6 +66,18 @@ if (!empty($_POST)) {
     $id_post_selec = $id_pub_res['Id_post'];
     $id_post_selec = $id_post_selec + 1;
     $queryImagen = "INSERT INTO imagenes (Id_user, Id_post, Ruta_imagen) VALUES('$id_usuario', '$id_post_selec', '$destino')";
+    
+    
+    
+    if(!empty($_POST['check_list[]'])){
+        // Bucle para almacenar y mostrar los valores de la casilla de verificación comprobación individual.
+        foreach($_POST['check_list[]'] as $selected){
+            echo $selected."</br>";
+        }
+               
+        
+    }
+    
 
     if (mysqli_query($conexion, $queryPublicacion) && mysqli_query($conexion, $queryImagen)) {
         $output .= '<label class="text-success">Registro Insertado Correctamente</label>';

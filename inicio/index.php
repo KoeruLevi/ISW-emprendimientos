@@ -113,14 +113,79 @@
                                     Seleccione Categorias
                                 </button>
                                 <div class="dropdown-menu" id="categoria">
+
+                                        <input type="checkbox" name="check_list[]" value="jQuery"><label>jQuery</label><br/>
+                                    
+                                        <input type="checkbox" name="check_list[]" value="Alimentos"><label> Alimentos </label><br/>
+                                    
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox"> Alimentos
+                                        <input type="checkbox" name="check_list[]" value="Servicios"> Servicios
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox"> Servicios
+                                        <input type="checkbox" name="check_list[]" value="Limpieza"> Limpieza
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox"> Otros...
+                                        <input type="checkbox" name="check_list[]" value="Mecanica"> Mecánica
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Educacion"> Educación
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Transporte"> Transporte
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="TransporteE"> Transporte escolar
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Utiles"> Útiles
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesC"> Útiles de Cocina
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesH"> Útiles del Hogar
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesE"> Útiles Escolares
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesL"> Útiles de Librería
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Casero"> Casero
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Manualidades"> Manualidades
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Libros"> Libros
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Vestimenta"> Vestimenta
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Menaje"> Menaje
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Joyeria"> Joyería
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Usado"> Usado
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Reciclado"> Reciclado
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Pintura"> Pintura
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Artesania"> Artesanía
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="HechoA"> Hecho a Mano
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Otros"> Otros...
                                     </span>
                                 </div>
                             </div>
