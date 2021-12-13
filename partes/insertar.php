@@ -68,19 +68,20 @@ if (!empty($_POST)) {
     $id_post_selec = $id_post_selec + 1;
     $queryImagen = "INSERT INTO imagenes (Id_user, Id_post, Ruta_imagen) VALUES('$id_usuario', '$id_post_selec', '$destino')";
     
-    
-    
-    if(!empty($_POST['check_list[]'])){
-        // Bucle para almacenar y mostrar los valores de la casilla de verificación comprobación individual.
-        foreach($_POST['check_list[]'] as $selected){
-            echo $selected."</br>";
+    if(isset($_REQUEST['Alimentos'])){
+        $queryCategoria = "INSERT INTO categorias(Id_post, Nombre_categoria) VALUES('$id_post_selec','Alimentos')";
+        echo "\n aqui pasa"."    ".$id_post_selec;
+        if(mysqli_query($conexion, $queryCategoria)) {
+            echo "Alimento Insertado en bd";
+        }else {
+            echo "\nLa concha de tu madreeeejhjhj:c";
         }
-               
-        
     }
+    echo "\n   ".$_REQUEST['Servicios']."   ".$_REQUEST['Alimentos']."  ".$_REQUEST['Educacion'];
     
-
-    if (mysqli_query($conexion, $queryPublicacion) && mysqli_query($conexion, $queryImagen)) {
+    
+    
+    if (mysqli_query($conexion, $queryPublicacion123) && mysqli_query($conexion, $queryImagen123)) {
         $output .= '<label class="text-success">Registro Insertado Correctamente</label>';
         header('Location: ../inicio/index.php');
     }
