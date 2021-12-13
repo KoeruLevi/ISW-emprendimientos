@@ -44,12 +44,12 @@
                             <div class="card-body">
                                 <div class="row">
                                     <?php
-                                    $consulta = "SELECT DISTINCT * FROM vista_inicio WHERE disponibilidad_vipost = 'disponible' "; // corregir para que se muestre solo una publicacion con la immagen correspondiente ya que por img se copia publicacion
+                                    $consulta = "SELECT DISTINCT * FROM vista_inicio"; // corregir para que se muestre solo una publicacion con la immagen correspondiente ya que por img se copia publicacion
                                     $resultado = mysqli_query($conexion, $consulta);
                                     while ($mostrar = mysqli_fetch_array($resultado)) { ?>
                                         <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                             <div class="card" style="width: 18rem;">
-                                                <img src="<?php print $mostrar['ruta_imagen_vipost']; ?>" class="card-img-top" alt="...">
+                                                <img src="<?php print $mostrar['ruta_imagen_vipost']; ?>" width="128" height="192" class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="text-primary"><?php echo $mostrar['titulo_vipost'] ?></h5>
                                                     <h5 class="text-muted"><?php echo $mostrar['info_vipost'] ?></h5>
@@ -156,12 +156,6 @@
                         <div class="row">
                             <div class="form-group col-3">
                                 <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-3">
-                                <input type="text" id="contacto" class="form-control" name="contacto" placeholder="Contacto" required>
                             </div>
                         </div>
                         <br><br>
