@@ -1,6 +1,7 @@
 <?php
 include('../conexion/conexion.php');
 session_start();
+date_default_timezone_set('America/Santiago');
 # definimos la carpeta destino
 $carpetaDestino = "../assets/imagenes/";
 date_default_timezone_set('America/Santiago');
@@ -44,6 +45,7 @@ if (!empty($_POST)) {
 
     if ($disponibilidad == 1) {
         $disponibilidad = 'Disponible';
+        
     }else {
         $disponibilidad = 'No disponible';
     }
@@ -77,7 +79,6 @@ if (!empty($_POST)) {
         }
     }
     echo "\n   ".$_REQUEST['Servicios']."   ".$_REQUEST['Alimentos']."  ".$_REQUEST['Educacion'];
-
 
     if (mysqli_query($conexion, $queryPublicacion123) && mysqli_query($conexion, $queryImagen123)) {
         $output .= '<label class="text-success">Registro Insertado Correctamente</label>';

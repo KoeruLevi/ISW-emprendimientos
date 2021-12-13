@@ -20,13 +20,7 @@
 
             <!-- Page Content -->
             <?php
-            if ($_SESSION['Flag_succes_coment'] == 1) { //1 para si / 0 para no
-                $id_post =  $_SESSION['Id_post_aft'];
-                $_SESSION['Flag_succes_coment'] = 0;
-            } else {
-                $id_post = $_POST['id_post_selec'];
-                $_SESSION['Id_post_aft'] = $id_post;
-            }
+            $id_post = $_POST["id_post_selec"];
             $consulta = "SELECT*FROM vista_publicacion where id_post_vp = $id_post ";
             $resultado = mysqli_query($conexion, $consulta);
             $mostrar = mysqli_fetch_array($resultado);
@@ -53,12 +47,9 @@
                     <div class="container">
                         <div id="carouselIMGs" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
-                                <?php //while ($mostrar = mysqli_fetch_array($resultado)) { 
+                                <?php
                                 ?>
                                 <div class="carousel-item active">
-                                    <img src="<?php print $mostrar['ruta_imagen_vp'] ?>" width="680" height="680" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
                                     <img src="<?php print $mostrar['ruta_imagen_vp'] ?>" width="680" height="680" class="d-block w-100" alt="...">
                                 </div>
                             </div>
