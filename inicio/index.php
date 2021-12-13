@@ -44,7 +44,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <?php
-                                    $consulta = "SELECT DISTINCT * FROM vista_inicio"; // corregir para que se muestre solo una publicacion con la immagen correspondiente ya que por img se copia publicacion
+                                    $consulta = "SELECT DISTINCT * FROM vista_inicio";
                                     $resultado = mysqli_query($conexion, $consulta);
                                     while ($mostrar = mysqli_fetch_array($resultado)) { ?>
                                         <div class="col-lg-3 col-md-6 d-flex stat my-3">
@@ -104,103 +104,121 @@
                                         reader.readAsDataURL(event.target.files[0]);
                                     };
                                 </script>
-                            
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="row">
                             <div class="dropdown" id="categoria">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="categoria" data-toggle="dropdown">
                                     Seleccione Categorias
                                 </button>
-                                
-                                <div class="dropdown-menu" id="categoria">
-
-                                        <input type="checkbox" name="check_list[]" value="jQuery"><label>jQuery</label><br/>
-                                    
-                                        <input type="checkbox" name="check_list[]" value="Alimentos"><label> Alimentos </label><br/>
-                                    
+                                <div class="dropdown-menu" id="categoria" style="overflow-y: clip">
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Servicios"> Servicios
+                                        <input type="checkbox" name="Alimentos" value="Alimentos"> Alimentos
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Limpieza"> Limpieza
+                                        <input type="checkbox" name="Servicios"> Servicios
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Mecanica"> Mecánica
+                                        <input type="checkbox" name="Limpieza"> Limpieza
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Educacion"> Educación
+                                        <input type="checkbox" name="Mecanica" > Mecánica
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Transporte"> Transporte
+                                        <input type="checkbox" name="Educacion" > Educación
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="TransporteE"> Transporte escolar
+                                        <input type="checkbox" name="Transporte"> Transporte
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Utiles"> Útiles
+                                        <input type="checkbox" name="TransporteEs"> Transporte escolar
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="UtilesC"> Útiles de Cocina
+                                        <input type="checkbox" name="Utiles" > Útiles
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="UtilesH"> Útiles del Hogar
+                                        <input type="checkbox" name="  UtilesCocina"> Útiles de Cocina
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="UtilesE"> Útiles Escolares
+                                        <input type="checkbox" name="UtilesHogar" > Útiles del Hogar
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="UtilesL"> Útiles de Librería
+                                        <input type="checkbox" name="UtilesEscolar" > Útiles Escolares
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Casero"> Casero
+                                        <input type="checkbox" name="UtilesLibreria"> Útiles de Librería
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Manualidades"> Manualidades
+                                        <input type="checkbox" name="Casero" > Casero
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Libros"> Libros
+                                        <input type="checkbox" name="Manualidades"> Manualidades
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Vestimenta"> Vestimenta
+                                        <input type="checkbox" name="Libros" > Libros
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Menaje"> Menaje
+                                        <input type="checkbox" name="Vestimenta" > Vestimenta
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Joyeria"> Joyería
+                                        <input type="checkbox" name="Menaje" > Menaje
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Usado"> Usado
+                                        <input type="checkbox" name="Joyeria" > Joyería
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Reciclado"> Reciclado
+                                        <input type="checkbox" name="Usado" > Usado
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Pintura"> Pintura
+                                        <input type="checkbox" name="Reciclado" > Reciclado
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Artesania"> Artesanía
+                                        <input type="checkbox" name="Pintura" > Pintura
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="HechoA"> Hecho a Mano
+                                        <input type="checkbox" name="Artesania" > Artesanía
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox" name="check_list[]" value="Otros"> Otros...
+                                        <input type="checkbox" name="HechoAmano" > Hecho a Mano
                                     </span>
-                                </div>
-
-                            </div>
-                            <br><br>
-
-
-                            <div class="row">
-                                <div class="form-group col-3">
-                                    <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Otros" > Otros...
+                                    </span>
                                 </div>
                             </div>
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="form-group col-3">
+                                <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
+                            </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="form-group col-3">
-                                    <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
-                                </div>
+                        <div class="row">
+                            <div class="form-group col-3">
+                                <label for="disponibilidad">Disponibilidad:</label>
+                                <select class="form-select" name="disponibilidad" id="disponibilidad">
+                                    <option value="1" selected>Disponible</option>
+                                    <option value="2">No disponible</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-3">
+                                <label for="estado">Estado: </label>
+                                <select class="form-select" name="estado" id="estado">
+                                    <option value="1" selected>Nuevo</option>
+                                    <option value="2">Usado</option>
+                                    <option value="2">Viejo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-3">
+                                <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
                             </div>
                         </div>
                         <br><br>
@@ -233,7 +251,18 @@
 
                         <div class="row">
                             <div class="form-group col-3">
-                                <input type="text" id="id_post" class="form-control" name="id_post" placeholder="ID" required>
+                                <select id="id_post" name="id_post" class="form-select" require>
+                                    <option selected>Selecciona un ID</option>
+                                    <?php
+                                    $consulta2 = "SELECT * FROM publicacion";
+                                    $resultado = mysqli_query($conexion, $consulta2);
+
+                                    while ($mostrar = mysqli_fetch_array($resultado)) { ?>
+                                        <option><?php echo $mostrar['id_post'] ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
 
@@ -252,18 +281,14 @@
                                         reader.readAsDataURL(event.target.files[0]);
                                     };
                                 </script>
-
-                                <div class="row">
-                                    <div class="form-group col-3">
-                                        <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group col-3">
-                                        <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="form-group col-3">
+                                <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="form-group col-3">
