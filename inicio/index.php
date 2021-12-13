@@ -44,23 +44,20 @@
                             <div class="card-body">
                                 <div class="row">
                                     <?php
-                                    ///query para ver si hay publicaciones dependientes de disponibilidad:
-                                    //$consulta="SELECT*FROM publicacion WHERE disponibilidad ='true'";
-                                    $consulta = "SELECT*FROM vista_inicio"; //query de prueba
+                                    $consulta = "SELECT DISTINCT * FROM vista_inicio"; // corregir para que se muestre solo una publicacion con la immagen correspondiente ya que por img se copia publicacion
                                     $resultado = mysqli_query($conexion, $consulta);
                                     while ($mostrar = mysqli_fetch_array($resultado)) { ?>
                                         <div class="col-lg-3 col-md-6 d-flex stat my-3">
-                                            <div class="mx-auto">
-
-                                                <img src="<?php print $mostrar['ruta_imagen_vipost']; ?>" style="width:100%">
-                                                <h2 class="font-weight-bold"><?php echo $mostrar['titulo_vipost'] ?></h2>
-                                                <h5 class="text-info"><?php echo $mostrar['info_vipost'] ?></h5>
-
-                                                <form action="../partes/publicacion.php" method="post" enctype="multipart/form-data">
-                                                    <input type="hidden" id="id_post_selec" name="id_post_selec" value="<?php echo $mostrar['id_vipost'] ?>">
-                                                    <button type="submit" class="btn btn-warning">Ver mas</button>
-                                                </form>
-
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="<?php print $mostrar['ruta_imagen_vipost']; ?>" width="128" height="192" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="text-primary"><?php echo $mostrar['titulo_vipost'] ?></h5>
+                                                    <h5 class="text-muted"><?php echo $mostrar['info_vipost'] ?></h5>
+                                                    <form action="../partes/publicacion.php" method="post" enctype="multipart/form-data">
+                                                        <input type="hidden" id="id_post_selec" name="id_post_selec" value="<?php echo $mostrar['id_vipost'] ?>">
+                                                        <button type="submit" class="btn btn-warning">Ver mas</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     <?php
@@ -114,11 +111,79 @@
                                 </button>
                                 
                                 <div class="dropdown-menu" id="categoria">
+
+                                        <input type="checkbox" name="check_list[]" value="jQuery"><label>jQuery</label><br/>
+                                    
+                                        <input type="checkbox" name="check_list[]" value="Alimentos"><label> Alimentos </label><br/>
+                                    
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox"> Alimentos
+                                        <input type="checkbox" name="check_list[]" value="Servicios"> Servicios
                                     </span>
                                     <span class="dropdown-item" type="button">
-                                        <input type="checkbox"> Servicios
+                                        <input type="checkbox" name="check_list[]" value="Limpieza"> Limpieza
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Mecanica"> Mecánica
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Educacion"> Educación
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Transporte"> Transporte
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="TransporteE"> Transporte escolar
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Utiles"> Útiles
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesC"> Útiles de Cocina
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesH"> Útiles del Hogar
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesE"> Útiles Escolares
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="UtilesL"> Útiles de Librería
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Casero"> Casero
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Manualidades"> Manualidades
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Libros"> Libros
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Vestimenta"> Vestimenta
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Menaje"> Menaje
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Joyeria"> Joyería
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Usado"> Usado
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Reciclado"> Reciclado
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Pintura"> Pintura
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Artesania"> Artesanía
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="HechoA"> Hecho a Mano
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="check_list[]" value="Otros"> Otros...
                                     </span>
                                 </div>
 
@@ -137,16 +202,11 @@
                                     <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="form-group col-3">
-                                    <input type="text" id="contacto" class="form-control" name="contacto" placeholder="Contacto" required>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="offset-10">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
+                        </div>
+                        <br><br>
+                        <div class="offset-10">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
                     </form>
                 </div>
             </div>
