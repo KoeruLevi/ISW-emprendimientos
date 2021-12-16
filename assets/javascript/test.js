@@ -10,3 +10,4 @@ $(function(){
 function EnviarDatosAModal(id){
     $('#titulo').val(id.id_post);
 }
+

@@ -77,6 +77,7 @@ a:hover {
 
 #precio_post{
     width: 250px;
+    
 }
 
 #contacto{
@@ -91,7 +92,7 @@ a:hover {
     max-height: 280px;
     overflow-y: auto;
 }
-  
+
 @media (max-width: 768px) {
     #sidebar-container {
       display: none;

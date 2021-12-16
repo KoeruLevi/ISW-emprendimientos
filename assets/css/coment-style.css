@@ -13,7 +13,6 @@
     border-right: 0;
     border-left: 0;
     padding: 1rem;
-    
 
 }
 
@@ -21,14 +20,13 @@
 
     size-adjust: auto;
     border-style: solid;
-    
     border-radius: 10%;
     border-color: rgba(8, 196, 230, 0.753);
     border-right: 0;
     border-left: 0;
     padding: 1rem;
-    
-	
+
+
 }
 
 #DateBox{
