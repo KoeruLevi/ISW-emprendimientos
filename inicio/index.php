@@ -44,12 +44,12 @@
                             <div class="card-body">
                                 <div class="row">
                                     <?php
-                                    $consulta = "SELECT*FROM vista_inicio WHERE disponibilidad_vipost = 'disponible' "; // corregir para que se muestre solo una publicacion con la immagen correspondiente ya que por img se copia publicacion
+                                    $consulta = "SELECT DISTINCT * FROM vista_inicio";
                                     $resultado = mysqli_query($conexion, $consulta);
                                     while ($mostrar = mysqli_fetch_array($resultado)) { ?>
                                         <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                             <div class="card" style="width: 18rem;">
-                                                <img src="<?php print $mostrar['ruta_imagen_vipost']; ?>" class="card-img-top" alt="...">
+                                                <img src="<?php print $mostrar['ruta_imagen_vipost']; ?>" width="128" height="192" class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="text-primary"><?php echo $mostrar['titulo_vipost'] ?></h5>
                                                     <h5 class="text-muted"><?php echo $mostrar['info_vipost'] ?></h5>
@@ -82,7 +82,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body overflow-y">
                     <form method="POST" enctype="multipart/form-data" action="../partes/insertar.php">
                         <div class="row">
                             <div class="form-group col-3">
@@ -108,6 +108,100 @@
                         </div>
                         <br><br>
                         <div class="row">
+                            <div class="dropdown" id="categoria">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="categoria" data-toggle="dropdown">
+                                    Seleccione Categorias
+                                </button>
+                                <div class="dropdown-menu" id="categoria" style="overflow-y: scroll">
+                                    <script type="text/javascript">
+                                        jQuery(function() {
+                                            var max = 3;
+                                            var checkboxes = jQuery('input[type="checkbox"]');
+
+                                            checkboxes.change(function() {
+                                                var current = checkboxes.filter(':checked').length;
+                                                checkboxes.filter(':not(:checked)').prop('disabled', current >= max);
+                                            });
+                                        });
+                                    </script>
+                                    <span class="dropdown-item" type="button"><label for="">Máximo 3 categorías</label> </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Alimentos" value="Alimentos"> Alimentos
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Servicios" value="Servicios"> Servicios
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Limpieza" value="Limpieza"> Limpieza
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Mecanica" value="Mecanica"> Mecánica
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Educacion" value="Educacion"> Educación
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Transporte" value="Transporte"> Transporte
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="TransporteEs" value="Transporte Escolar"> Transporte escolar
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Utiles" value="Utiles"> Útiles
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="  UtilesCocina" value="Utiles de Cocina"> Útiles de Cocina
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="UtilesHogar" value="Utiles del Hogar"> Útiles del Hogar
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="UtilesEscolar" value="Utiles Escolares"> Útiles Escolares
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="UtilesLibreria" value="Utiles de Libreria"> Útiles de Librería
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Casero" value="Casero"> Casero
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Manualidades" value="Manualidades"> Manualidades
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Libros" value="Libros"> Libros
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Vestimenta" value="Vestimenta"> Vestimenta
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Menaje" value="Menaje"> Menaje
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Joyeria" value="Joyería"> Joyería
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Usado" value="Usado"> Usado
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Reciclado" value="Reciclado"> Reciclado
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Pintura" value="Pintura"> Pintura
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Artesania" value="Artesania"> Artesanía
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="HechoAmano" value="Hecho a Mano"> Hecho a Mano
+                                    </span>
+                                    <span class="dropdown-item" type="button">
+                                        <input type="checkbox" name="Otros" value="Otros"> Otros...
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="row">
                             <div class="form-group col-3">
                                 <input type="text" id="info_post" class="form-control" name="info_post" placeholder="Descripción" required>
                             </div>
@@ -115,13 +209,28 @@
 
                         <div class="row">
                             <div class="form-group col-3">
-                                <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
+                                <label for="disponibilidad">Disponibilidad:</label>
+                                <select class="form-select" name="disponibilidad" id="disponibilidad">
+                                    <option value="1" selected>Disponible</option>
+                                    <option value="2">No disponible</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-3">
-                                <input type="text" id="contacto" class="form-control" name="contacto" placeholder="Contacto" required>
+                                <label for="estado">Estado: </label>
+                                <select class="form-select" name="estado" id="estado">
+                                    <option value="1" selected>Nuevo</option>
+                                    <option value="2">Usado</option>
+                                    <option value="2">Viejo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-3">
+                                <input type="number" id="precio_post" class="form-control" name="precio_post" placeholder="Precio" required>
                             </div>
                         </div>
                         <br><br>
